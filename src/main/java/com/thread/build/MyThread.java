@@ -1,5 +1,8 @@
 package com.thread.build;
 
+/**
+ * 采用继承Thread类方式创建线程
+ */
 public class MyThread extends Thread{
 
     @Override

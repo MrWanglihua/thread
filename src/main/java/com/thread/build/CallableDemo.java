@@ -2,6 +2,9 @@ package com.thread.build;
 
 import java.util.concurrent.*;
 
+/**
+ * 需要返回值的
+ */
 public class CallableDemo implements Callable<String> {
 
 
