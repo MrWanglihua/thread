@@ -1,0 +1,27 @@
+package com.day5.cyclicBarrier;
+
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
+
+public class DataImportThread extends Thread{
+
+    CyclicBarrier cyclicBarrier ;
+    String path;
+
+    public DataImportThread(CyclicBarrier cyclicBarrier, String path) {
+        this.cyclicBarrier = cyclicBarrier;
+        this.path = path;
+    }
+
+    @Override
+    public void run() {
+        System.out.println(" 开始导入："+path+" 位置的数据");
+        try {
+            cyclicBarrier.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (BrokenBarrierException e) {
+            e.printStackTrace();
+        }
+    }
+}
